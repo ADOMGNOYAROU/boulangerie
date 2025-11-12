@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Baguette Tradition",
+        "price": 1.20,
+        "image": "🥖"
+    },
+    {
+        "id": 2,
+        "name": "Croissant Pur Beurre",
+        "price": 1.50,
+        "image": "🥐"
+    },
+    {
+        "id": 3,
+        "name": "Pain Complet",
+        "price": 3.80,
+        "image": "🍞"
+    },
+    {
+        "id": 4,
+        "name": "Pain au Chocolat",
+        "price": 1.60,
+        "image": "🧁"
+    },
+    {
+        "id": 5,
+        "name": "Pain aux Noix",
+        "price": 4.50,
+        "image": "🥨"
+    },
+    {
+        "id": 6,
+        "name": "Tarte aux Pommes",
+        "price": 18.00,
+        "image": "🍰"
+    }
+]
