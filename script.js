@@ -121,6 +121,47 @@ function animateOnScroll() {
     });
 }
 
+// Fonctionnalité WhatsApp améliorée
+function initializeWhatsApp() {
+    const whatsappBtn = document.querySelector('.whatsapp-float');
+    
+    if (whatsappBtn) {
+        // Animation d'entrée différée
+        setTimeout(() => {
+            whatsappBtn.style.transform = 'scale(1) rotate(0deg)';
+            whatsappBtn.style.opacity = '1';
+        }, 2000);
+
+        // Analytics/Tracking (optionnel)
+        whatsappBtn.addEventListener('click', () => {
+            // Vous pouvez ajouter ici du tracking Google Analytics
+            console.log('WhatsApp contact initiated');
+            
+            // Animation de feedback
+            whatsappBtn.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                whatsappBtn.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    whatsappBtn.style.transform = 'scale(1)';
+                }, 150);
+            }, 100);
+        });
+    }
+}
+
+// Initialisation complète
+document.addEventListener('DOMContentLoaded', () => {
+    // ... code existant ...
+
+    // Animations d'entrée des éléments
+    animateOnScroll();
+    
+    // Initialisation WhatsApp
+    initializeWhatsApp();
+
+    // ... reste du code ...
+});
+
 function showNewsletterSuccess(form) {
     // Créer un message de succès
     const successMessage = document.createElement('div');

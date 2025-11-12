@@ -308,20 +308,32 @@ footer {
     color: #8B4513;
     border: none;
     border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
+
+    .whatsapp-icon {
+        font-size: 22px;
+    }
 }
 
-.newsletter button:hover {
-    background: #FFA500;
-    transform: scale(1.05);
+/* Animation d'entrée */
+@keyframes whatsappEntry {
+    from {
+        transform: scale(0) rotate(180deg);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
 }
 
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+.whatsapp-float {
+    animation: whatsappEntry 0.6s ease-out 1s both;
+}
+
+.social-links a:hover {
+    background: #FFD700;
+    color: #8B4513;
+    transform: translateY(-3px);
 }
 
 .social-links a {
@@ -338,9 +350,6 @@ footer {
     font-size: 1.2rem;
 }
 
-.social-links a:hover {
-    background: #FFD700;
-    color: #8B4513;
     transform: translateY(-3px);
 }
 
