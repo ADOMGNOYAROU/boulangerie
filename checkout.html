@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commander - La Maison du Pain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">🥖 La Maison du Pain</div>
-            <ul class="nav-links">
+            <button class="menu-toggle" aria-label="Menu de navigation" aria-expanded="false">☰</button>
+            <ul class="nav-links" role="navigation" aria-label="Menu principal">
+                <button class="menu-close" aria-label="Fermer le menu">✕</button>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="produits.html">Nos Produits</a></li>
                 <li><a href="apropos.html">À Propos</a></li>

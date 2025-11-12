@@ -74,6 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Animations d'entrée des éléments
+    animateOnScroll();
+
     // Newsletter functionality
     const newsletterForms = document.querySelectorAll('.newsletter-form');
 
@@ -96,6 +99,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+function animateOnScroll() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+            }
+        });
+    }, observerOptions);
+
+    // Observer les éléments à animer
+    const animateElements = document.querySelectorAll('.product-card, .horaire-card, .about-content, .hero-content');
+    animateElements.forEach(el => {
+        observer.observe(el);
+    });
+}
 
 function showNewsletterSuccess(form) {
     // Créer un message de succès
