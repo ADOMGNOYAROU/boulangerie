@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const cart = {};
-    const cartCount = document.querySelector('.cart-count');
+    const panier = {};
+    const compteurPanier = document.querySelector('.cart-count');
     
     // Gestion quantité
     document.querySelectorAll('.quantity-btn').forEach(btn => {
@@ -15,24 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 qty.textContent = current - 1;
             }
             
-            updateCart(id, parseInt(qty.textContent));
+            mettreAJourPanier(id, parseInt(qty.textContent));
         });
     });
     
-    function updateCart(id, qty) {
-        cart[id] = qty;
-        const total = Object.values(cart).reduce((sum, q) => sum + q, 0);
-        cartCount.textContent = total;
+    function mettreAJourPanier(id, qty) {
+        panier[id] = qty;
+        const total = Object.values(panier).reduce((sum, q) => sum + q, 0);
+        compteurPanier.textContent = total;
     }
     
     // Commander
     document.querySelector('.checkout-btn').addEventListener('click', () => {
-        const order = Object.entries(cart).filter(([_, qty]) => qty > 0);
+        const order = Object.entries(panier).filter(([_, qty]) => qty > 0);
         if (order.length) {
-            localStorage.setItem('cart', JSON.stringify(order.map(([id, qty]) => ({ id: parseInt(id), quantity: qty }))));
+            localStorage.setItem('panier', JSON.stringify(order.map(([id, qty]) => ({ id: parseInt(id), quantity: qty }))));
             window.location.href = 'cart.html';
         } else {
-            alert('Sélectionnez des produits');
+            alert('Veuillez sélectionner des produits avant de commander.');
         }
     });
 });
